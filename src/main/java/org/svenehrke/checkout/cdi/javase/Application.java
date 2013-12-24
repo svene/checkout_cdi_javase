@@ -7,11 +7,15 @@ import javax.inject.Singleton;
 public class Application {
 
 	@Inject
-	SomeOtherBean someOtherBean;
+	WelcomeMessage welcomeMessage;
 
+	@Inject
+	Greeting greeting;
 
 	public void run() {
-		System.out.println("-> Application.run");
-		someOtherBean.sayHello();
+
+		System.out.println(welcomeMessage.greet("Sven"));
+
+		System.out.println(greeting.greet("Sven"));
 	}
 }
